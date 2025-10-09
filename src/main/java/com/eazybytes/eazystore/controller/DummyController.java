@@ -18,7 +18,7 @@ public class DummyController {
 
     @PostMapping("/create-user")
     public String createUser(@RequestBody UserDto userDto) {
-        System.out.println(userDto);
+        System.out.println(" Dummy Controller => UserDto " + userDto);
         return "User created successfully";
     }
 
