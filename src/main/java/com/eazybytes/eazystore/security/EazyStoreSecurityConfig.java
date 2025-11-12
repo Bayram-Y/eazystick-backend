@@ -38,7 +38,7 @@ public class EazyStoreSecurityConfig {
 
     @Bean
     SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http) throws Exception {
-        return http.csrf(csrfConfig -> csrfConfig.disable())
+        return http.csrf(csrfConfig -> csrfConfig.ignoringRequestMatchers("/api/v1/auth/login", "/api/v1/auth/register"))
                 .cors(corsConfig -> corsConfig.configurationSource(corsConfigurationSource()))
                 .authorizeHttpRequests((requests) -> {
                             publicPaths.forEach(path -> requests.requestMatchers(path).permitAll());
