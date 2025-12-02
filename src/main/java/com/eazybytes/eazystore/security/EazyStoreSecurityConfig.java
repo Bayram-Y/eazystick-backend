@@ -46,6 +46,9 @@ public class EazyStoreSecurityConfig {
                 .authorizeHttpRequests((requests) -> {
                             publicPaths.forEach(path -> requests.requestMatchers(path).permitAll());
                             requests.requestMatchers("/api/v1/admin/**").hasRole("ADMIN"); // ROLE_ADMIN
+                            requests.requestMatchers("/eazystore/actuator/**").hasRole("OPS_ENG"); // Operation System Engineer
+                            requests.requestMatchers("/swagger-ui.html", "/swagger-ui/**", "/v3/api-docs/**")
+                                    .hasAnyRole("DEV_ENG", "QA_ENG"); // Need Authoration
                             requests.anyRequest().hasAnyRole("USER", "ADMIN");
                         }
                 )
