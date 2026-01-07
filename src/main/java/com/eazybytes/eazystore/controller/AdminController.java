@@ -4,7 +4,6 @@ import com.eazybytes.eazystore.constants.ApplicationConstants;
 import com.eazybytes.eazystore.dto.ContactResponseDto;
 import com.eazybytes.eazystore.dto.OrderResponseDto;
 import com.eazybytes.eazystore.dto.ResponseDto;
-import com.eazybytes.eazystore.entity.Order;
 import com.eazybytes.eazystore.service.IContactService;
 import com.eazybytes.eazystore.service.IOrderService;
 import lombok.RequiredArgsConstructor;
